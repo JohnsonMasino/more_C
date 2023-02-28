@@ -4,15 +4,15 @@
 int main(void)
 {
 	FILE *ptr = NULL;
-	int count = 0;
-	char c;
+	int count = 1;
 
 	ptr = fopen("mas.txt", "r");
 	if (ptr == NULL)
 		printf("Error!\nNo such file found\n");
-	while ((c = fgetc(ptr))!=EOF)
+	fgetc(ptr);
+	while ((fgetc(ptr)) != EOF)
 	{
-		if (c == '\n')
+		if ((fgetc(ptr)) == '\n')
 		{
 			count = count + 1;
 		}
