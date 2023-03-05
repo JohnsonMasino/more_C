@@ -3,7 +3,7 @@
 void fun1();
 void fun2();
 
-int a = 10;
+static int a;
 
 int main(void)
 {
