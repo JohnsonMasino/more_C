@@ -20,5 +20,13 @@ int main(void)
 	MAX(a, b);
 	printf("From the two numbers originally in my database...\n");
 	MAX(2, 0);
+
+#undef MAX
+
+	printf("Original macros removed\n");
+	//MAX(3, 5);
+	/*if (MAX == NULL)
+		printf("Checked and macros is Null\n");*/
+	printf("\nCode developed by Masino\n");
 	return (0);
 }
