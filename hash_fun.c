@@ -2,20 +2,47 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-unsigned long hash_function(char *str)
+int main(void)
+{
+	printf("\nCode developed by Masino\n");
+
+	return (0);
+}
+
+
+unsigned long hash_function(char *stm)
 {
 	unsigned long i = 0;
 	int j = 0;
 
-	for (j; str[j]; j++)
-		i += str[j];
+	for (j; stm[j]; j++)
+		i += stm[j];
 
 	return (i % CAPACITY);
 }
 
-void main(void)
+typedef struct Hash_Item
 {
-	hash_function("Paulo");
-	//return (0);
+	char *key;
+	char *value;
+} Hash_Item;
+
+typedef struct HashTable
+{
+	Hash_Item **items;
+	int size;
+	int count;
+} HashTable;
+
+Hash_Item* create_item(char *key, char *value)
+{
+	Hash_Item *item = (Hash_Item*) malloc(sizeof(Hash_Item));
+	item->key = (char*) malloc(strlen(key) + 1);
+	item->value = (char*) malloc(strlen(value) +1);
+	strcpy(item->key, key);
+	strcpy(item->value, value);
+
+	return(item);
 }
